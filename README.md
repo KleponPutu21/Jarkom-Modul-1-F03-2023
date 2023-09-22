@@ -13,23 +13,37 @@ Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktiv
 Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
 
 ### Penyelesaian
+Untuk mengetahui protokol FTP yang digunakan untuk mengupload file bisa menggunakan sintaks display filter berikut:
+```
+ftp contains "STOR"
+```
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/1.1.png?raw=true)
-
+setelah mengetahui file yang diupload, kita bisa lakukan display filter berikut untuk mengetahui``` Request``` dan``` Response ```nya
+```
+ftp contains "zip"
+```
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/1.2.png?raw=true)
-
+Untuk soal a dan b kita bisa lihat pada paket Request bagian berikut:
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/1.3.png?raw=true)
-
+Sedangkan untuk soal b dan c kita bisa lihat pada paket Response bagian berikut:
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/1.4.png?raw=true)
-
+Perolehan Flag:
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/1.5.jpg?raw=true)
 
 ## Soal 2
 ### Soal
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 ### Penyelesaian
+Kita perlu mencari paket-paket dengan alamat IP portal praktikum yakni 10.21.78.111 menggunakan display filter berikut:
+```
+ip.addr == 10.21.78.111
+```
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/2.1.png?raw=true)
+setelah itu kita klik salah satu paket dan follow ke tcp streamnya
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/2.2.png?raw=true)
+maka akan muncul server yang dipakai yaitu gunicorn
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/2.3.png?raw=true)
+Perolehan Flag:
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/2.4.jpg?raw=true)
 
 ## Soal 3
@@ -38,8 +52,15 @@ Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal be
 Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?
 Protokol layer transport apa yang digunakan?
 ### Penyelesaian
+Lakukan display filter sesuai alamat IP soal sebagai berikut:
+```
+ip.addr == 239.255.255.250
+```
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/3.1.png?raw=true)
+lalu kita bisa lihat protocol layer yang digunakan adalah UDP (jawaban soal b), sehingga bisa kita tambahkan ke display filter menjadi: ``` ip.addr == 239.255.255.250 and udp.port == 3702 ```
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/3.2.png?raw=true)
+setelah itu dapat kita hitung total paket nya yakni 21 
+Perolehan Flag:
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/3.3.jpg?raw=true)
 
 
@@ -47,7 +68,9 @@ Protokol layer transport apa yang digunakan?
 ### Soal
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
 ### Penyelesaian
+Kita cukup scroll hingga menemukan paket nomor 130 lalu buka deskripsi TCP nya seperti berikut:
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/4.1.png?raw=true)
+nilai checksum yang dimaksud adalah: 0x18e5
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/4.2.jpg?raw=true)
 
 
@@ -72,7 +95,9 @@ Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggema
 ### Soal
 Berapa jumlah packet yang menuju IP 184.87.193.88?
 ### Penyelesaian
+Kita cukup lakukan sintaks display filter berikut: ``` ip.dst == 184.87.193.88 ```
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/7.1.png?raw=true)
+Jumlah paket yang menuju IP tersebut adalah 6
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/7.2.jpg?raw=true)
 
 ## Soal 8
@@ -93,7 +118,16 @@ Memerlukan queri filter untuk mengabil paket yang berasal dari alamat 10.51.40.1
 ### Soal
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
 ### Penyelesaian
+Pertama kita mencari telent user yang mencoba login dengan cara berikut
+```
+tcp contains "Password"
+```
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/10.1.png?raw=true)
+setelah itu kita klik paket yang ada dan follow ke tcp streamnya
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/10.2.png?raw=true)
+maka akan akan muncul tampilan User dan password
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/10.3.jpg?raw=true)
+Kendala:
+- brute force username yang mana di paket tertulis ddhhaaffiinn tetapi jawaban yang benar dhafin
+
 
