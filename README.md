@@ -133,6 +133,8 @@ ip.dst == 184.87.193.88
 
 Jumlah paket yang menuju IP tersebut adalah 6
 
+Perolehan Flag:
+
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/7.2.jpg?raw=true)
 
 Kendala: tidak ada
@@ -142,6 +144,8 @@ Kendala: tidak ada
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
 ### Penyelesaian
 Memerlukan kueri filter yang menyaring paket dengan tujuan port 80.Karena berkaitan dengan port, kami menggunakan TCP dan UDP, kemudian karena disebutkan port 80 maka kueri filter yang sesuai adalah [tcp.dstport == 80 || udp.dstport == 80]
+
+Perolehan Flag:
 
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/8.1.jpg?raw=true)
 
@@ -172,6 +176,8 @@ setelah itu kita klik paket yang ada dan follow ke tcp streamnya
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/10.2.png?raw=true)
 
 maka akan akan muncul tampilan User dan password
+
+Perolehan Flag:
 
 ![alt text](https://github.com/KleponPutu21/Jarkom-Modul-1-F03-2023/blob/main/img/10.3.jpg?raw=true)
 
