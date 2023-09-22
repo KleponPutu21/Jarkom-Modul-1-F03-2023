@@ -13,27 +13,39 @@ Berapakah sequence number (raw) pada packet yang menunjukkan response dari aktiv
 Berapakah acknowledge number (raw) pada packet yang menunjukkan response dari aktivitas tersebut?
 
 ### Penyelesaian
-
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
 
 ## Soal 2
 ### Soal
 Sebutkan web server yang digunakan pada portal praktikum Jaringan Komputer!
 ### Penyelesaian
-
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
 
 ## Soal 3
 ### Soal
 Dapin sedang belajar analisis jaringan. Bantulah Dapin untuk mengerjakan soal berikut:
 Berapa banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702?
 Protokol layer transport apa yang digunakan?
-
 ### Penyelesaian
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
 
 
 ## Soal 4
 ### Soal
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
 ### Penyelesaian
+![alt text](?raw=true)
+![alt text](?raw=true)
+
 
 
 ## Soal 5
@@ -56,23 +68,28 @@ Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggema
 ### Soal
 Berapa jumlah packet yang menuju IP 184.87.193.88?
 ### Penyelesaian
-
+![alt text](?raw=true)
+![alt text](?raw=true)
 
 ## Soal 8
 ### Soal
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad)
 ### Penyelesaian
 Memerlukan kueri filter yang menyaring paket dengan tujuan port 80.Karena berkaitan dengan port, kami menggunakan TCP dan UDP, kemudian karena disebutkan port 80 maka kueri filter yang sesuai adalah [tcp.dstport == 80 || udp.dstport == 80]
+![alt text](?raw=true)
 
 ## Soal 9
 ### Soal
 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
 ### Penyelesaian
 Memerlukan queri filter untuk mengabil paket yang berasal dari alamat 10.51.40.1 dan tidak menuju alamat 10.39.55.34. Karena berkaitan dengan alamata, maka kami menggunakan (ip), kemudian menggunakan and(&&) untuk menyatukan kondisi yang dibutuhkan. Sehingga kueri yang sesuai adalah [ip.src == 10.51.40.1 && ip.dst != 10.39.55.34]
+![alt text](?raw=true)
 
 ## Soal 10
 ### Soal
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
 ### Penyelesaian
-
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
 
